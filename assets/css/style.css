@@ -1,0 +1,29 @@
+.container {
+    background-color: #eee;
+    max-width: 750px;
+}
+.make-invisible {
+    visibility: hidden;
+}
+.choice-display, .score-display {
+    width: 100%;
+    height: 300px;
+    background-color: #bbb;
+    margin: auto;
+}
+.choice-text, score-text {
+    font-size: 2.5em;
+}
+.my-choice-text:hover {
+    color: rgb(190, 5, 5);
+}
+.chosen-one {
+    background-color: rgb(73, 238, 250);
+}
+.score-display {
+    height: 50px;
+}
+#score-filler {
+    width: 100%;
+    height: 180px;
+}

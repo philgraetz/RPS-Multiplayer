@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RPS Game</title>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- LINK TO FIREBASE GOES HERE -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
+<body>
+    <div class="container p-3" id=title-container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Rock Paper Scissors</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONNECTION CONTAINER -->
+    <!-- DISPLAYED WHILE ESTABLISHING CONNECTION -->
+    <div class="container" id="connection-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group input-group-sm">
+                    <div class="input-group input-group-sm w-85">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-secondary btn-sm" id="name-ok">OK</button>
+                        </div>
+                        <input type="text" class="form-control" id="player-name" placeholder="Enter your name here">
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Active Requests</span>
+                        </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" id="active-request-group">
+                            <!-- <button type="button" class="btn btn-secondary btn-sm active-request-button">Player 666</button> -->
+                        </div>
+                        <div class="input-group input-group-sm">
+                            <button type="button" class="btn btn-secondary btn-sm" id="new-game-button">Request a new game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Enter your name and hit OK <br>
+                   Then select an active request (created by your opponent) <br>
+                   Or make a new request (to be selected by your opponent)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAY CONTAINER -->
+    <!-- DISPLAYED FOR THE GAME -->
+    <div class="container" id="play-container">
+        <div class="row" id="choice-area">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <h2 class="player-name text-center" id="my-name">Rocky</h2>
+                <div class="choice-display border rounded shadow mb-4" id="my-display-area">
+                    <div class="choice-text my-choice-text text-center my-4" id="rock">ROCK</div>
+                    <div class="choice-text my-choice-text text-center my-4" id="paper">PAPER</div>
+                    <div class="choice-text my-choice-text text-center my-4" id="scissors">SCISSORS</div>
+                </div>
+                <div class="score-display border rounded shadow mb-4" id="my-score-area">
+                    <div class="score-text my-score-text text-center my-4" id="my-score">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="score-filler"></div>
+                <div class="score-text" id="your-result"></div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="player-name text-center" id="opponent-name">Ralphy</h2>
+                <div class="choice-display border rounded shadow mb-4" id="opponent-display-area">
+                    <div class="choice-text text-center my-4" id="opponent-rock">&nbsp;</div>
+                    <div class="choice-text text-center my-4" id="opponent-paper">?</div>
+                    <div class="choice-text text-center my-4" id="opponent-scissors">&nbsp;</div>
+                </div>
+                <div class="score-display border rounded shadow mb-4" id="opponent-score-area">
+                    <div class="score-text opponent-score-text text-center my-4" id="opponent-score">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS (from getbootstrap.com) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <!-- AJAX JS (required for AJAX, also supports JQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- RPS Game JS -->
+    <script src="assets/javascript/rps.js"></script>
+    </script>
+
+    <script>
+        $(document).ready(documentReady);
+    </script>
+
+</body>
+
+</html>
