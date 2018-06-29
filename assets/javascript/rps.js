@@ -59,7 +59,6 @@ function activeRequestCB() {
 function choiceButtonCB() {
     let choice = $(this).attr("id");
     // console.log("pressed button " + choice);
-    $(this).addClass("chosen-one");
     RPS.makeChoice(choice);
 }
 
@@ -469,6 +468,8 @@ function RPSPlayer() {
             // console.log(this.state + " Ignoring click on " + choice);
             return;
         }
+        $("#"+choice).addClass("chosen-one");
+
         // We've made our choice, disable the buttons now
 
         // First we will create a checksum and send it
